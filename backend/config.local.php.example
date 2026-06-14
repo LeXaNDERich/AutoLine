@@ -1,0 +1,14 @@
+<?php
+declare(strict_types=1);
+
+const DB_HOST = 'localhost';
+const DB_PORT = 3306;
+const DB_NAME = 'autoline';
+const DB_USER = 'root';
+const DB_PASS = '';
+const DB_CHARSET = 'utf8mb4';
+const DB_DEBUG = true;
+
+const ADMIN_PHONES = [
+    '+79859504740',
+];
