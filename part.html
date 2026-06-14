@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запчасть | AutoLine</title>
+    <meta name="description" content="Карточка автозапчасти AutoLine.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=10">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container header-top-inner">
+                <p class="header-top-slogan">Авто под заказ · Сервис · Запчасти</p>
+                <div class="header-top-phones">
+                    <a class="phone-link" href="tel:+79001234567">
+                        <span class="phone-num">+7 (900) 123-45-67</span>
+                        <span class="phone-label">Заказ авто</span>
+                    </a>
+                    <a class="phone-link" href="tel:+79001234568">
+                        <span class="phone-num">+7 (900) 123-45-68</span>
+                        <span class="phone-label">Сервис и ремонт</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container header-main-inner">
+                <button id="menu-toggle" class="header-burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="header-burger-box" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+                <a class="header-logo" href="index.php" aria-label="AutoLine — на главную">
+                    <span class="header-logo-badge">AL</span>
+                    <span class="header-logo-name">Auto<span>Line</span></span>
+                </a>
+                <nav class="header-nav" aria-label="Разделы сайта">
+                    <div class="header-nav-track">
+                        <a class="header-nav-link" href="brands.php">Марки</a>
+                        <a class="header-nav-link" href="index.php#catalogs">Каталоги</a>
+                        <a class="header-nav-link" href="brands.php?segment=economy">Эконом</a>
+                        <a class="header-nav-link" href="brands.php?segment=premium">Премиум</a>
+                        <a class="header-nav-link" href="index.php#contact">Контакты</a>
+                    </div>
+                </nav>
+                <div class="header-aside">
+                    <a class="header-btn header-btn-ghost" href="cabinet.php"><span class="header-btn-full">Личный кабинет</span><span class="header-btn-short">Кабинет</span></a>
+                    <a class="header-btn header-btn-accent" href="index.php#contact">Заявка</a>
+                </div>
+            </div>
+        </div>
+        <nav id="main-nav" class="nav-drawer" aria-label="Основное меню">
+            <div class="nav-drawer-head">
+                <span class="header-logo-badge">AL</span>
+                <span class="header-logo-name">Auto<span>Line</span></span>
+            </div>
+            <div class="nav-drawer-inner">
+                <a href="index.php">Главная</a>
+                <a href="brands.php">Все марки</a>
+                <a id="part-brand-link" href="brands.php">Марка</a>
+                <a href="cabinet.php">Личный кабинет</a>
+            </div>
+        </nav>
+        <div id="nav-overlay" class="nav-overlay" hidden></div>
+    </header>
+
+    <main class="car-page">
+        <section class="section-light">
+            <div class="container">
+                <a id="part-back-link" class="page-back" href="brands.php">← Назад</a>
+                <article class="car-detail-card">
+                    <img id="part-image" class="car-detail-image" src="" alt="">
+                    <div class="car-detail-info">
+                        <h1 class="title-accent" id="part-title">Запчасть</h1>
+                        <p class="car-detail-brand" id="part-brand">Марка</p>
+                        <p class="car-detail-price" id="part-price">Цена по запросу</p>
+                        <p class="car-detail-text" id="part-meta">
+                            Оригинальные и качественные аналоги. Проверяем совместимость с вашей моделью и модификацией.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer-inner">
+            <p>© <span id="year"></span> AutoLine. Все права защищены.</p>
+            <p class="footer-note">Сайт носит информационный характер и не является публичной офертой.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js?v=3"></script>
+    <script src="assets/js/part-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Марка | AutoLine</title>
+    <meta name="description" content="Каталоги по выбранной марке: авто под заказ и автозапчасти.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=10">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container header-top-inner">
+                <p class="header-top-slogan">Авто под заказ · Сервис · Запчасти</p>
+                <div class="header-top-phones">
+                    <a class="phone-link" href="tel:+79001234567">
+                        <span class="phone-num">+7 (900) 123-45-67</span>
+                        <span class="phone-label">Заказ авто</span>
+                    </a>
+                    <a class="phone-link" href="tel:+79001234568">
+                        <span class="phone-num">+7 (900) 123-45-68</span>
+                        <span class="phone-label">Сервис и ремонт</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container header-main-inner">
+                <button id="menu-toggle" class="header-burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="header-burger-box" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+                <a class="header-logo" href="index.php" aria-label="AutoLine — на главную">
+                    <span class="header-logo-badge">AL</span>
+                    <span class="header-logo-name">Auto<span>Line</span></span>
+                </a>
+                <nav class="header-nav" aria-label="Разделы сайта">
+                    <div class="header-nav-track">
+                        <a class="header-nav-link" href="brands.php">Марки</a>
+                        <a class="header-nav-link" href="index.php#catalogs">Каталоги</a>
+                        <a class="header-nav-link" href="brands.php?segment=economy">Эконом</a>
+                        <a class="header-nav-link" href="brands.php?segment=premium">Премиум</a>
+                        <a class="header-nav-link" href="index.php#contact">Контакты</a>
+                    </div>
+                </nav>
+                <div class="header-aside">
+                    <a class="header-btn header-btn-ghost" href="cabinet.php"><span class="header-btn-full">Личный кабинет</span><span class="header-btn-short">Кабинет</span></a>
+                    <a class="header-btn header-btn-accent" href="index.php#contact">Заявка</a>
+                </div>
+            </div>
+        </div>
+        <nav id="main-nav" class="nav-drawer" aria-label="Основное меню">
+            <div class="nav-drawer-head">
+                <span class="header-logo-badge">AL</span>
+                <span class="header-logo-name">Auto<span>Line</span></span>
+            </div>
+            <div class="nav-drawer-inner">
+                <a href="index.php">Главная</a>
+                <a href="brands.php">Все марки</a>
+                <a href="#brand-models">Модели</a>
+                <a href="#brand-auto-catalog">Классы авто</a>
+                <a href="#brand-parts-catalog">Каталог запчастей</a>
+                <a href="cabinet.php">Личный кабинет</a>
+            </div>
+        </nav>
+        <div id="nav-overlay" class="nav-overlay" hidden></div>
+    </header>
+
+    <main class="brand-page">
+        <section class="page-hero">
+            <div class="container">
+                <a class="page-back" href="brands.php">← Все марки</a>
+                <h1 class="title-accent">Марка: <span id="brand-name">—</span></h1>
+                <p class="page-lead" id="brand-lead">
+                    Загружаем каталог по выбранной марке...
+                </p>
+            </div>
+        </section>
+
+        <section id="brand-models" class="section-light">
+            <div class="container">
+                <div class="catalog-head">
+                    <h2 class="section-title-simple">Модели <span id="brand-models-name">—</span></h2>
+                </div>
+                <div id="brand-models-grid" class="car-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="brand-auto-catalog" class="section-light">
+            <div class="container">
+                <div class="catalog-head">
+                    <h2 class="section-title-simple">Каталог классов: автомобили под заказ</h2>
+                </div>
+                <div id="brand-auto-grid" class="grid catalog-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="brand-parts-catalog" class="section-light">
+            <div class="container">
+                <div class="catalog-head">
+                    <h2 class="section-title-simple">Автозапчасти</h2>
+                </div>
+                <div id="brand-parts-filters" class="parts-filters" role="tablist" aria-label="Модели для подбора запчастей"></div>
+                <div id="brand-parts-grid" class="grid parts-catalog-grid" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="quick-modal" class="quick-modal" hidden>
+        <div class="quick-modal-backdrop" data-close-modal="true"></div>
+        <div class="quick-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quick-modal-title">
+            <button type="button" class="quick-modal-close" data-close-modal="true" aria-label="Закрыть">×</button>
+            <div class="quick-modal-layout">
+                <div class="quick-modal-preview">
+                    <img id="quick-modal-image" class="quick-modal-image" src="assets/images/car-placeholder.svg" alt="">
+                    <div id="quick-modal-part-thumb" class="quick-modal-part-thumb" hidden>Запчасть</div>
+                </div>
+                <div class="quick-modal-content">
+                    <div class="quick-modal-head">
+                        <span id="quick-modal-badge" class="quick-modal-badge"></span>
+                        <h3 id="quick-modal-title">Заявка</h3>
+                        <p id="quick-modal-price" class="quick-modal-price"></p>
+                        <p id="quick-modal-meta" class="quick-modal-meta"></p>
+                    </div>
+                    <form id="quick-request-form" class="quick-form" action="submit.php" method="POST">
+                        <input type="hidden" id="quick-service" name="service" value="order">
+                        <input type="hidden" id="quick-comment" name="comment" value="">
+                        <div class="quick-form-row">
+                            <label class="quick-form-field">
+                                <span>Имя</span>
+                                <input type="text" id="quick-name" name="name" autocomplete="name" required>
+                            </label>
+                            <label class="quick-form-field">
+                                <span>Телефон</span>
+                                <input type="tel" id="quick-phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+                            </label>
+                        </div>
+                        <label class="quick-form-field">
+                            <span>Email</span>
+                            <input type="email" id="quick-email" name="email" autocomplete="email" placeholder="you@example.com">
+                        </label>
+                        <label class="quick-form-field">
+                            <span>Уточнение</span>
+                            <textarea id="quick-note" rows="2" placeholder="VIN, комплектация, срок…"></textarea>
+                        </label>
+                        <div class="quick-form-actions">
+                            <button type="submit" class="btn btn-accent btn-block">Отправить заявку</button>
+                            <p id="quick-form-message" class="form-message" aria-live="polite"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container site-footer-inner">
+            <p>© <span id="year"></span> AutoLine. Все права защищены.</p>
+            <p class="footer-note">Сайт носит информационный характер и не является публичной офертой.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/phone-mask.js?v=4"></script>
+    <script src="assets/js/script.js?v=8"></script>
+    <script src="assets/js/brand-detail.js?v=10"></script>
+</body>
+</html>
